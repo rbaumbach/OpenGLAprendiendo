@@ -1,6 +1,6 @@
 # OpenGLAprendiendo
 
-Learning how to draw a triangle using OpenGL
+Learning how to draw a triangle using OpenGL on macOS
 
 ![multi-colored-opengl-triangle](opengl-triangle.png)
 
