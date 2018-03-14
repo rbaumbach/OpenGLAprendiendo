@@ -10,21 +10,37 @@
 		942B8F7F20406D85006AACE9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942B8F7E20406D85006AACE9 /* OpenGL.framework */; };
 		942B8F932040ABB4006AACE9 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 942B8F8E2040AA81006AACE9 /* libglfw.3.2.dylib */; };
 		942B8F942040ABCF006AACE9 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 942B8F872040A923006AACE9 /* libGLEW.2.1.0.dylib */; };
-		942B8F952040B0C1006AACE9 /* libglfw.3.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 942B8F8E2040AA81006AACE9 /* libglfw.3.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		942B8F962040B0C9006AACE9 /* libGLEW.2.1.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 942B8F872040A923006AACE9 /* libGLEW.2.1.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		942B8F952040B0C1006AACE9 /* libglfw.3.2.dylib in Copy Framework Files */ = {isa = PBXBuildFile; fileRef = 942B8F8E2040AA81006AACE9 /* libglfw.3.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		942B8F962040B0C9006AACE9 /* libGLEW.2.1.0.dylib in Copy Framework Files */ = {isa = PBXBuildFile; fileRef = 942B8F872040A923006AACE9 /* libGLEW.2.1.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9460B4C6204066D000DF2EE5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9460B4C5204066D000DF2EE5 /* main.cpp */; };
+		94C2CE9D2059AD370087A103 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94C2CE9B2059AD370087A103 /* Shader.cpp */; };
+		94C2CEA42059BA1F0087A103 /* vertex.glsl in Copy Resources Files */ = {isa = PBXBuildFile; fileRef = 94C2CE9F2059B0160087A103 /* vertex.glsl */; };
+		94C2CEA52059BA1F0087A103 /* fragment.glsl in Copy Resources Files */ = {isa = PBXBuildFile; fileRef = 94C2CEA02059B0220087A103 /* fragment.glsl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9460B4C0204066D000DF2EE5 /* CopyFiles */ = {
+		9460B4C0204066D000DF2EE5 /* Copy Framework Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				942B8F962040B0C9006AACE9 /* libGLEW.2.1.0.dylib in CopyFiles */,
-				942B8F952040B0C1006AACE9 /* libglfw.3.2.dylib in CopyFiles */,
+				942B8F962040B0C9006AACE9 /* libGLEW.2.1.0.dylib in Copy Framework Files */,
+				942B8F952040B0C1006AACE9 /* libglfw.3.2.dylib in Copy Framework Files */,
 			);
+			name = "Copy Framework Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94C2CEA32059BA0F0087A103 /* Copy Resources Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				94C2CEA42059BA1F0087A103 /* vertex.glsl in Copy Resources Files */,
+				94C2CEA52059BA1F0087A103 /* fragment.glsl in Copy Resources Files */,
+			);
+			name = "Copy Resources Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -40,6 +56,10 @@
 		942B8F8E2040AA81006AACE9 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libglfw.3.2.dylib; sourceTree = "<group>"; };
 		9460B4C2204066D000DF2EE5 /* OpenGLAprendiendo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLAprendiendo; sourceTree = BUILT_PRODUCTS_DIR; };
 		9460B4C5204066D000DF2EE5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		94C2CE9B2059AD370087A103 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		94C2CE9C2059AD370087A103 /* Shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
+		94C2CE9F2059B0160087A103 /* vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
+		94C2CEA02059B0220087A103 /* fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fragment.glsl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +135,21 @@
 			isa = PBXGroup;
 			children = (
 				942B8F842040A7C3006AACE9 /* Libraries */,
+				94C2CE9E2059AFF20087A103 /* Shaders */,
 				9460B4C5204066D000DF2EE5 /* main.cpp */,
 			);
 			path = OpenGLAprendiendo;
+			sourceTree = "<group>";
+		};
+		94C2CE9E2059AFF20087A103 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				94C2CE9F2059B0160087A103 /* vertex.glsl */,
+				94C2CEA02059B0220087A103 /* fragment.glsl */,
+				94C2CE9C2059AD370087A103 /* Shader.hpp */,
+				94C2CE9B2059AD370087A103 /* Shader.cpp */,
+			);
+			path = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,7 +161,8 @@
 			buildPhases = (
 				9460B4BE204066D000DF2EE5 /* Sources */,
 				9460B4BF204066D000DF2EE5 /* Frameworks */,
-				9460B4C0204066D000DF2EE5 /* CopyFiles */,
+				9460B4C0204066D000DF2EE5 /* Copy Framework Files */,
+				94C2CEA32059BA0F0087A103 /* Copy Resources Files */,
 			);
 			buildRules = (
 			);
@@ -177,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94C2CE9D2059AD370087A103 /* Shader.cpp in Sources */,
 				9460B4C6204066D000DF2EE5 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
