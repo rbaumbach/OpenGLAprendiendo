@@ -324,6 +324,7 @@
 		9460B4CA204066D000DF2EE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/OpenGLAprendiendo/Libraries/**";
@@ -340,6 +341,7 @@
 		9460B4CB204066D000DF2EE5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/OpenGLAprendiendo/Libraries/**";
