@@ -23,10 +23,11 @@ void processInput(GLFWwindow *window);
 
 int main()
 {
-    if (setupOpenGL() == -1) {
+    if (setupOpenGL() == -1)
+    {
         return -1;
     }
-    
+
     Triangle triangle;
     triangle.setup();
     
