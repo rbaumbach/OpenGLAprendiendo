@@ -9,9 +9,86 @@
 const GLint WIDTH = 800;
 const GLint HEIGHT = 600;
 
+GLFWwindow* window;
+
+GLfloat vertices[] = {
+    // positions          // colors
+    0.5f, -0.5f, 0.0f,    1.0f, 0.0f, 0.0f,   // bottom right
+    -0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   // bottom left
+    0.0f,  0.5f, 0.0f,    0.0f, 0.0f, 1.0f    // top
+};
+
+int setupOpenGL();
+void teardownOpenGL();
+
+int setupGLFW(int* screenWidth, int* screenHeight);
+void teardownGLFW();
+int setupGLEW();
+
+void setupTriangle(GLuint* vertexArrayObj, GLuint* vertexBufferObj);
+void teardownTriangle(GLuint* vertexArrayObj, GLuint* vertexBufferObj);
+
+void renderTriangle(Shader shader, int vertexArrayObj);
+
 void processInput(GLFWwindow *window);
 
 int main()
+{
+    if (setupOpenGL() == -1) {
+        return -1;
+    }
+    
+    Shader shader("vertex.glsl", "fragment.glsl");
+
+    GLuint VAO, VBO;
+    
+    setupTriangle(&VAO, &VBO);
+    
+    // display loop
+
+    while(!glfwWindowShouldClose(window))
+    {
+        processInput(window);
+        
+        renderTriangle(shader, VAO);
+        
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+
+    teardownTriangle(&VAO, &VBO);
+    
+    teardownOpenGL();
+    
+    return 0;
+}
+
+int setupOpenGL()
+{
+    int screenWidth;
+    int screenHeight;
+    
+    if (setupGLFW(&screenWidth, &screenHeight) == -1)
+    {
+        return -1;
+    }
+    
+    if (setupGLEW() == -1)
+    {
+        return -1;
+    }
+    
+    glViewport(0, 0, screenWidth, screenHeight);
+    
+    return 0;
+}
+
+void teardownOpenGL()
+{
+    teardownGLFW();
+}
+
+int setupGLFW(int* screenWidth, int* screenHeight)
 {
     glfwInit();
     
@@ -19,29 +96,38 @@ int main()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-
+    
     // this is required for macOS
     
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     
-    GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "OpenGL Aprendiendo", NULL, NULL);
+    window = glfwCreateWindow(WIDTH, HEIGHT, "OpenGL Aprendiendo", NULL, NULL);
     
     // this is required for macOS due to retina screens
     
-    int screenWidth;
-    int screenHeight;
-    
-    glfwGetFramebufferSize(window, &screenWidth, &screenHeight);
-    
+    glfwGetFramebufferSize(window, screenWidth, screenHeight);
+
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
+
         glfwTerminate();
+
         return -1;
     }
     
     glfwMakeContextCurrent(window);
 
+    return 0;
+}
+
+void teardownGLFW()
+{
+    glfwTerminate();
+}
+
+int setupGLEW()
+{
     glewExperimental = GL_TRUE;
     
     if (glewInit() != GLEW_OK)
@@ -50,27 +136,19 @@ int main()
         return -1;
     }
     
-    glViewport(0, 0, screenWidth, screenHeight);
-    
-    Shader shader("vertex.glsl", "fragment.glsl");
-    
-    GLfloat vertices[] = {
-        // positions          // colors
-        0.5f, -0.5f, 0.0f,    1.0f, 0.0f, 0.0f,   // bottom right
-        -0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   // bottom left
-        0.0f,  0.5f, 0.0f,    0.0f, 0.0f, 1.0f    // top
-    };
-    
-    GLuint VBO, VAO;
-    
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
+    return 0;
+}
+
+void setupTriangle(GLuint* vertexArrayObj, GLuint* vertexBufferObj)
+{
+    glGenVertexArrays(1, vertexArrayObj);
+    glGenBuffers(1, vertexBufferObj);
     
     // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
     
-    glBindVertexArray(VAO);
+    glBindVertexArray(*vertexArrayObj);
     
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBindBuffer(GL_ARRAY_BUFFER, *vertexBufferObj);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     
     // position attribute
@@ -91,31 +169,25 @@ int main()
     // VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
     
     glBindVertexArray(0);
+}
 
-    while(!glfwWindowShouldClose(window))
-    {
-        processInput(window);
-        
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
-        
-        shader.useProgram();
-        
-        // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
-        
-        glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
-        
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
+void teardownTriangle(GLuint* vertexArrayObj, GLuint* vertexBufferObj)
+{
+    glDeleteVertexArrays(1, vertexArrayObj);
+    glDeleteBuffers(1, vertexBufferObj);
+}
+
+void renderTriangle(Shader shader, int vertexArrayObj)
+{
+    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
     
-    glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
+    shader.useProgram();
     
-    glfwTerminate();
+    // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
     
-    return 0;
+    glBindVertexArray(vertexArrayObj);
+    glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
 void processInput(GLFWwindow *window)
