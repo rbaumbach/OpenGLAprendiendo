@@ -12,6 +12,7 @@
 		942B8F942040ABCF006AACE9 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 942B8F872040A923006AACE9 /* libGLEW.2.1.0.dylib */; };
 		942B8F952040B0C1006AACE9 /* libglfw.3.2.dylib in Copy Framework Files */ = {isa = PBXBuildFile; fileRef = 942B8F8E2040AA81006AACE9 /* libglfw.3.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		942B8F962040B0C9006AACE9 /* libGLEW.2.1.0.dylib in Copy Framework Files */ = {isa = PBXBuildFile; fileRef = 942B8F872040A923006AACE9 /* libGLEW.2.1.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9450B1A0205ADCF7007C9699 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9450B19E205ADCF7007C9699 /* Triangle.cpp */; };
 		9460B4C6204066D000DF2EE5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9460B4C5204066D000DF2EE5 /* main.cpp */; };
 		94C2CE9D2059AD370087A103 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94C2CE9B2059AD370087A103 /* Shader.cpp */; };
 		94C2CEA42059BA1F0087A103 /* vertex.glsl in Copy Resources Files */ = {isa = PBXBuildFile; fileRef = 94C2CE9F2059B0160087A103 /* vertex.glsl */; };
@@ -54,6 +55,8 @@
 		942B8F8C2040AA81006AACE9 /* glfw3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
 		942B8F8D2040AA81006AACE9 /* glfw3native.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
 		942B8F8E2040AA81006AACE9 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libglfw.3.2.dylib; sourceTree = "<group>"; };
+		9450B19E205ADCF7007C9699 /* Triangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
+		9450B19F205ADCF7007C9699 /* Triangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Triangle.hpp; sourceTree = "<group>"; };
 		9460B4C2204066D000DF2EE5 /* OpenGLAprendiendo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLAprendiendo; sourceTree = BUILT_PRODUCTS_DIR; };
 		9460B4C5204066D000DF2EE5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		94C2CE9B2059AD370087A103 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
@@ -114,6 +117,17 @@
 			path = GLFW;
 			sourceTree = "<group>";
 		};
+		9450B19D205ADCD5007C9699 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				94C2CE9F2059B0160087A103 /* vertex.glsl */,
+				94C2CEA02059B0220087A103 /* fragment.glsl */,
+				94C2CE9C2059AD370087A103 /* Shader.hpp */,
+				94C2CE9B2059AD370087A103 /* Shader.cpp */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
 		9460B4B9204066D000DF2EE5 = {
 			isa = PBXGroup;
 			children = (
@@ -135,21 +149,20 @@
 			isa = PBXGroup;
 			children = (
 				942B8F842040A7C3006AACE9 /* Libraries */,
-				94C2CE9E2059AFF20087A103 /* Shaders */,
+				94C2CE9E2059AFF20087A103 /* Triangle */,
 				9460B4C5204066D000DF2EE5 /* main.cpp */,
 			);
 			path = OpenGLAprendiendo;
 			sourceTree = "<group>";
 		};
-		94C2CE9E2059AFF20087A103 /* Shaders */ = {
+		94C2CE9E2059AFF20087A103 /* Triangle */ = {
 			isa = PBXGroup;
 			children = (
-				94C2CE9F2059B0160087A103 /* vertex.glsl */,
-				94C2CEA02059B0220087A103 /* fragment.glsl */,
-				94C2CE9C2059AD370087A103 /* Shader.hpp */,
-				94C2CE9B2059AD370087A103 /* Shader.cpp */,
+				9450B19D205ADCD5007C9699 /* Shaders */,
+				9450B19F205ADCF7007C9699 /* Triangle.hpp */,
+				9450B19E205ADCF7007C9699 /* Triangle.cpp */,
 			);
-			path = Shaders;
+			path = Triangle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94C2CE9D2059AD370087A103 /* Shader.cpp in Sources */,
+				9450B1A0205ADCF7007C9699 /* Triangle.cpp in Sources */,
 				9460B4C6204066D000DF2EE5 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
