@@ -1,10 +1,10 @@
-#include "Shader.hpp"
+#include "ShaderManager.hpp"
 
 #include <iostream>
 #include <sstream>
 #include <fstream>
 
-Shader::Shader(const GLchar *vertexPath, const GLchar *fragmentPath)
+void ShaderManager::loadShadersFromPaths(const GLchar *vertexPath, const GLchar *fragmentPath)
 {
     // 1. Retrieve the vertex/fragment source code from filePath
     std::string vertexCode;
@@ -64,15 +64,15 @@ Shader::Shader(const GLchar *vertexPath, const GLchar *fragmentPath)
         std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
     // Shader Program
-    this->program = glCreateProgram();
-    glAttachShader(this->program, vertex);
-    glAttachShader(this->program, fragment);
-    glLinkProgram(this->program);
+    shaderProgram = glCreateProgram();
+    glAttachShader(shaderProgram, vertex);
+    glAttachShader(shaderProgram, fragment);
+    glLinkProgram(shaderProgram);
     // Print linking errors if any
-    glGetProgramiv(this->program, GL_LINK_STATUS, &success);
+    glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
     if (!success)
     {
-        glGetProgramInfoLog(this->program, 512, NULL, infoLog);
+        glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
         std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
     }
     // Delete the shaders as they're linked into our program now and no longer necessery
@@ -80,7 +80,7 @@ Shader::Shader(const GLchar *vertexPath, const GLchar *fragmentPath)
     glDeleteShader(fragment);
 }
 
-void Shader::useProgram()
+void ShaderManager::useProgram()
 {
-    glUseProgram(this->program);
+    glUseProgram(shaderProgram);
 }

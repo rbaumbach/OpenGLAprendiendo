@@ -7,10 +7,12 @@ GLfloat triangleVertices[] = {
     0.0f,  0.5f, 0.0f,    0.0f, 0.0f, 1.0f    // top
 };
 
-Triangle::Triangle() : shader("vertex.glsl", "fragment.glsl") {}
+Triangle::Triangle() {}
 
 void Triangle::setup()
 {
+    shaderManager.loadShadersFromPaths("vertex.glsl", "fragment.glsl");
+    
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
 
@@ -52,7 +54,7 @@ void Triangle::render()
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    shader.useProgram();
+    shaderManager.useProgram();
 
     // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
     

@@ -3,7 +3,7 @@
 
 // Shader class includes GLEW
 
-#include "Shader.hpp"
+#include "ShaderManager.hpp"
 
 class Triangle
 {
@@ -17,7 +17,7 @@ public:
 private:
     GLuint VAO;
     GLuint VBO;
-    Shader shader;
+    ShaderManager shaderManager;
 };
 
 #endif
