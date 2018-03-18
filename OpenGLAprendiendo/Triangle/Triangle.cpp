@@ -46,7 +46,7 @@ void Triangle::setup()
     }
     else
     {
-        glBufferData(GL_ARRAY_BUFFER, sizeof(macOSTriangleVertices), triangleVertices, GL_STATIC_DRAW);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(triangleVertices), triangleVertices, GL_STATIC_DRAW);
 
     }
     
