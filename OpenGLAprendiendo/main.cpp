@@ -28,7 +28,7 @@ int main()
         return -1;
     }
 
-    Triangle triangle(false);
+    Triangle triangle;
     triangle.setup();
     
     // display loop
