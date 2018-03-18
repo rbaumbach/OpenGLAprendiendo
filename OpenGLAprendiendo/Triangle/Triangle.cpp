@@ -7,11 +7,21 @@ GLfloat triangleVertices[] = {
     0.0f,  0.5f, 0.0f,    0.0f, 0.0f, 1.0f    // top
 };
 
-Triangle::Triangle() {}
+Triangle::Triangle(GLboolean isMacOS)
+{
+    this->isMacOS = isMacOS;
+}
 
 void Triangle::setup()
 {
-    shaderManager.loadShadersFromPaths("vertex.glsl", "fragment.glsl");
+    if (isMacOS)
+    {
+        shaderManager.loadShadersFromPaths("vertex.glsl", "fragment.glsl");
+    }
+    else
+    {
+        shaderManager.loadHardcodedShaders();
+    }
     
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);

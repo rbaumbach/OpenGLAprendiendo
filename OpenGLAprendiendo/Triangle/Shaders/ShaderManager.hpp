@@ -18,6 +18,11 @@ class ShaderManager
 public:
     void loadShadersFromPaths(const GLchar *vertexPath, const GLchar *fragmentPath);
     
+    // This is so that I can load hardcoded shaders on iOS so that I don't have to deal
+    // with the filesystem right now.
+    
+    void loadHardcodedShaders();
+    
     // Uses the current shaders
     
     void useProgram();

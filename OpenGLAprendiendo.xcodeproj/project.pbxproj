@@ -14,6 +14,7 @@
 		942B8F962040B0C9006AACE9 /* libGLEW.2.1.0.dylib in Copy Framework Files */ = {isa = PBXBuildFile; fileRef = 942B8F872040A923006AACE9 /* libGLEW.2.1.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9450B1A0205ADCF7007C9699 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9450B19E205ADCF7007C9699 /* Triangle.cpp */; };
 		9460B4C6204066D000DF2EE5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9460B4C5204066D000DF2EE5 /* main.cpp */; };
+		9476805E205D7A2500DF5323 /* ShaderConstants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9476805C205D7A2500DF5323 /* ShaderConstants.cpp */; };
 		94C2CE9D2059AD370087A103 /* ShaderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94C2CE9B2059AD370087A103 /* ShaderManager.cpp */; };
 		94C2CEA42059BA1F0087A103 /* vertex.glsl in Copy Resources Files */ = {isa = PBXBuildFile; fileRef = 94C2CE9F2059B0160087A103 /* vertex.glsl */; };
 		94C2CEA52059BA1F0087A103 /* fragment.glsl in Copy Resources Files */ = {isa = PBXBuildFile; fileRef = 94C2CEA02059B0220087A103 /* fragment.glsl */; };
@@ -59,6 +60,8 @@
 		9450B19F205ADCF7007C9699 /* Triangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Triangle.hpp; sourceTree = "<group>"; };
 		9460B4C2204066D000DF2EE5 /* OpenGLAprendiendo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLAprendiendo; sourceTree = BUILT_PRODUCTS_DIR; };
 		9460B4C5204066D000DF2EE5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9476805C205D7A2500DF5323 /* ShaderConstants.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderConstants.cpp; sourceTree = "<group>"; };
+		9476805D205D7A2500DF5323 /* ShaderConstants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ShaderConstants.hpp; sourceTree = "<group>"; };
 		94C2CE9B2059AD370087A103 /* ShaderManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderManager.cpp; sourceTree = "<group>"; };
 		94C2CE9C2059AD370087A103 /* ShaderManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ShaderManager.hpp; sourceTree = "<group>"; };
 		94C2CE9F2059B0160087A103 /* vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				94C2CEA02059B0220087A103 /* fragment.glsl */,
 				94C2CE9C2059AD370087A103 /* ShaderManager.hpp */,
 				94C2CE9B2059AD370087A103 /* ShaderManager.cpp */,
+				9476805C205D7A2500DF5323 /* ShaderConstants.cpp */,
+				9476805D205D7A2500DF5323 /* ShaderConstants.hpp */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9476805E205D7A2500DF5323 /* ShaderConstants.cpp in Sources */,
 				94C2CE9D2059AD370087A103 /* ShaderManager.cpp in Sources */,
 				9450B1A0205ADCF7007C9699 /* Triangle.cpp in Sources */,
 				9460B4C6204066D000DF2EE5 /* main.cpp in Sources */,
