@@ -12,6 +12,4 @@ Pod::Spec.new do |spec|
                                'OpenGLAprendiendo/Triangle/Shaders/*.{hpp}'
   spec.source_files          = 'OpenGLAprendiendo/Triangle/*.{hpp,cpp}',
                                'OpenGLAprendiendo/Triangle/Shaders/*.{hpp,cpp}'
-  spec.ios.framework         = 'OpenGLES'
-  spec.osx.framework         = 'OpenGL'
 end
