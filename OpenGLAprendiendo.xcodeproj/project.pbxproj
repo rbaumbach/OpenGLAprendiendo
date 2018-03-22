@@ -66,6 +66,7 @@
 		94C2CE9C2059AD370087A103 /* ShaderManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ShaderManager.hpp; sourceTree = "<group>"; };
 		94C2CE9F2059B0160087A103 /* vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
 		94C2CEA02059B0220087A103 /* fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fragment.glsl; sourceTree = "<group>"; };
+		94E4FF7E2062044900A39116 /* stb_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +94,7 @@
 		942B8F842040A7C3006AACE9 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				94E4FF7D2062041100A39116 /* stb */,
 				942B8F852040A7D5006AACE9 /* GL */,
 				942B8F862040A89C006AACE9 /* GLFW */,
 			);
@@ -168,6 +170,14 @@
 				9450B19E205ADCF7007C9699 /* Triangle.cpp */,
 			);
 			path = Triangle;
+			sourceTree = "<group>";
+		};
+		94E4FF7D2062041100A39116 /* stb */ = {
+			isa = PBXGroup;
+			children = (
+				94E4FF7E2062044900A39116 /* stb_image.h */,
+			);
+			path = stb;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
