@@ -6,6 +6,7 @@
 #include <GLFW/glfw3.h>
 
 #include "Triangle.hpp"
+#include "Box.hpp"
 
 const GLint WIDTH = 800;
 const GLint HEIGHT = 600;
@@ -31,19 +32,24 @@ int main()
     Triangle triangle;
     triangle.setup();
     
+    Box box;
+    box.setup();
+    
     // display loop
 
     while(!glfwWindowShouldClose(window))
     {
         processInput(window);
         
-        triangle.render();
+//        triangle.render();
+        box.render();
         
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
-    triangle.teardown();
+//    triangle.teardown();
+    box.teardown();
     
     teardownOpenGL();
     

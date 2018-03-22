@@ -1,14 +1,14 @@
-#ifndef Triangle_hpp
-#define Triangle_hpp
+#ifndef Box_hpp
+#define Box_hpp
 
 #include "ShaderManager.hpp"
 
-class Triangle
+class Box
 {
 public:
     // This constuctor exists to handle loading of the shaders differently if we are on macOS vs. iOS
     
-    Triangle(GLboolean isMacOS = true);
+    Box(GLboolean isMacOS = true);
     
     void setup();
     void teardown();

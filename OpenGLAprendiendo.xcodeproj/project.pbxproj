@@ -18,6 +18,9 @@
 		94C2CE9D2059AD370087A103 /* ShaderManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94C2CE9B2059AD370087A103 /* ShaderManager.cpp */; };
 		94C2CEA42059BA1F0087A103 /* vertex.glsl in Copy Resources Files */ = {isa = PBXBuildFile; fileRef = 94C2CE9F2059B0160087A103 /* vertex.glsl */; };
 		94C2CEA52059BA1F0087A103 /* fragment.glsl in Copy Resources Files */ = {isa = PBXBuildFile; fileRef = 94C2CEA02059B0220087A103 /* fragment.glsl */; };
+		94E4FFAE206334CD00A39116 /* Box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94E4FFAC206334CD00A39116 /* Box.cpp */; };
+		94E4FFAF206335C400A39116 /* box-vertex.glsl in Copy Resources Files */ = {isa = PBXBuildFile; fileRef = 94E4FFA92063342B00A39116 /* box-vertex.glsl */; };
+		94E4FFB0206335C400A39116 /* box-fragment.glsl in Copy Resources Files */ = {isa = PBXBuildFile; fileRef = 94E4FFAA2063343800A39116 /* box-fragment.glsl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +42,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				94E4FFAF206335C400A39116 /* box-vertex.glsl in Copy Resources Files */,
+				94E4FFB0206335C400A39116 /* box-fragment.glsl in Copy Resources Files */,
 				94C2CEA42059BA1F0087A103 /* vertex.glsl in Copy Resources Files */,
 				94C2CEA52059BA1F0087A103 /* fragment.glsl in Copy Resources Files */,
 			);
@@ -67,6 +72,10 @@
 		94C2CE9F2059B0160087A103 /* vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
 		94C2CEA02059B0220087A103 /* fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fragment.glsl; sourceTree = "<group>"; };
 		94E4FF7E2062044900A39116 /* stb_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		94E4FFA92063342B00A39116 /* box-vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = "box-vertex.glsl"; sourceTree = "<group>"; };
+		94E4FFAA2063343800A39116 /* box-fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = "box-fragment.glsl"; sourceTree = "<group>"; };
+		94E4FFAC206334CD00A39116 /* Box.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Box.cpp; sourceTree = "<group>"; };
+		94E4FFAD206334CD00A39116 /* Box.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Box.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				942B8F842040A7C3006AACE9 /* Libraries */,
+				94E4FFAB2063345700A39116 /* Shapes */,
 				94C2CE9E2059AFF20087A103 /* Triangle */,
 				9460B4C5204066D000DF2EE5 /* main.cpp */,
 			);
@@ -178,6 +188,33 @@
 				94E4FF7E2062044900A39116 /* stb_image.h */,
 			);
 			path = stb;
+			sourceTree = "<group>";
+		};
+		94E4FFA7206333F400A39116 /* Box */ = {
+			isa = PBXGroup;
+			children = (
+				94E4FFA82063340F00A39116 /* Shaders */,
+				94E4FFAD206334CD00A39116 /* Box.hpp */,
+				94E4FFAC206334CD00A39116 /* Box.cpp */,
+			);
+			path = Box;
+			sourceTree = "<group>";
+		};
+		94E4FFA82063340F00A39116 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				94E4FFA92063342B00A39116 /* box-vertex.glsl */,
+				94E4FFAA2063343800A39116 /* box-fragment.glsl */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		94E4FFAB2063345700A39116 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				94E4FFA7206333F400A39116 /* Box */,
+			);
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +279,7 @@
 				94C2CE9D2059AD370087A103 /* ShaderManager.cpp in Sources */,
 				9450B1A0205ADCF7007C9699 /* Triangle.cpp in Sources */,
 				9460B4C6204066D000DF2EE5 /* main.cpp in Sources */,
+				94E4FFAE206334CD00A39116 /* Box.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
