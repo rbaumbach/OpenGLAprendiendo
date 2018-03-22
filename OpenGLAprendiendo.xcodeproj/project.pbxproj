@@ -21,6 +21,7 @@
 		94E4FFAE206334CD00A39116 /* Box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94E4FFAC206334CD00A39116 /* Box.cpp */; };
 		94E4FFAF206335C400A39116 /* box-vertex.glsl in Copy Resources Files */ = {isa = PBXBuildFile; fileRef = 94E4FFA92063342B00A39116 /* box-vertex.glsl */; };
 		94E4FFB0206335C400A39116 /* box-fragment.glsl in Copy Resources Files */ = {isa = PBXBuildFile; fileRef = 94E4FFAA2063343800A39116 /* box-fragment.glsl */; };
+		94E4FFB32063363E00A39116 /* wood-box.jpg in Copy Resources Files */ = {isa = PBXBuildFile; fileRef = 94E4FFB22063362A00A39116 /* wood-box.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +43,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				94E4FFB32063363E00A39116 /* wood-box.jpg in Copy Resources Files */,
 				94E4FFAF206335C400A39116 /* box-vertex.glsl in Copy Resources Files */,
 				94E4FFB0206335C400A39116 /* box-fragment.glsl in Copy Resources Files */,
 				94C2CEA42059BA1F0087A103 /* vertex.glsl in Copy Resources Files */,
@@ -76,6 +78,7 @@
 		94E4FFAA2063343800A39116 /* box-fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = "box-fragment.glsl"; sourceTree = "<group>"; };
 		94E4FFAC206334CD00A39116 /* Box.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Box.cpp; sourceTree = "<group>"; };
 		94E4FFAD206334CD00A39116 /* Box.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Box.hpp; sourceTree = "<group>"; };
+		94E4FFB22063362A00A39116 /* wood-box.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wood-box.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +196,7 @@
 		94E4FFA7206333F400A39116 /* Box */ = {
 			isa = PBXGroup;
 			children = (
+				94E4FFB12063360300A39116 /* Textures */,
 				94E4FFA82063340F00A39116 /* Shaders */,
 				94E4FFAD206334CD00A39116 /* Box.hpp */,
 				94E4FFAC206334CD00A39116 /* Box.cpp */,
@@ -215,6 +219,14 @@
 				94E4FFA7206333F400A39116 /* Box */,
 			);
 			path = Shapes;
+			sourceTree = "<group>";
+		};
+		94E4FFB12063360300A39116 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				94E4FFB22063362A00A39116 /* wood-box.jpg */,
+			);
+			path = Textures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
